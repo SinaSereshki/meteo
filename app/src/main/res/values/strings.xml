@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">meteo</string>
+    <string name="news_li_title">Article Title</string>
+    <string name="news_li_source">By Article source</string>
 </resources>
