@@ -11,7 +11,7 @@ import io.github.aimsio.meteo.data.model.weather.*
 @Entity(tableName = CURRENT_CACHED_TABLE)
 data class CurrentCached(
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = CURRENT_CACHED_ID)
     var id: Long,
     @ColumnInfo(name = CURRENT_CACHED)

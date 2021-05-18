@@ -1,4 +1,8 @@
 package io.github.aimsio.meteo.di.data
 
-class DataModule {
+import dagger.Module
+
+
+@Module
+abstract class DataModule {
 }

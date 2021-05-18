@@ -10,7 +10,7 @@ import io.github.aimsio.meteo.data.model.weather.Info
 @Entity(tableName = NEWS_CACHED_TABLE)
 data class NewsCached(
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = NEWS_CACHED_ID)
     var id: Long,
     @ColumnInfo(name = NEWS_CACHED)

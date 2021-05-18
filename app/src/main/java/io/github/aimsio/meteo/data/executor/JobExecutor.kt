@@ -1,6 +1,5 @@
 package io.github.aimsio.meteo.data.executor
 
-import io.github.aimsio.meteo.domain.executor.ThreadExecutor
 import java.util.concurrent.LinkedBlockingDeque
 import java.util.concurrent.ThreadFactory
 import java.util.concurrent.ThreadPoolExecutor

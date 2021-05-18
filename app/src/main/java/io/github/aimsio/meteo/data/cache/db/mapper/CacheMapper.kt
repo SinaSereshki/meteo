@@ -5,6 +5,6 @@ interface CacheMapper<CachedModel, DataModel> {
 
     fun mapFromCached(cached: CachedModel): DataModel
 
-    fun mapToCached(entity: DataModel): CachedModel
+    fun mapToCached(cityName:String, entity: DataModel): CachedModel
 
 }
