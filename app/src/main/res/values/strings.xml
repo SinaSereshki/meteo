@@ -2,4 +2,11 @@
     <string name="app_name">meteo</string>
     <string name="news_li_title">Article Title</string>
     <string name="news_li_source">By Article source</string>
+    <string name="today_in">Today in</string>
+    <string name="search_hint">Search in your city</string>
+    <string name="city_name">City Name</string>
+    <string name="min_max">min/max</string>
+    <string name="current">Current</string>
+    <string name="next_3_days">Next 3 days</string>
+    <string name="news_highlights">News Highlights</string>
 </resources>

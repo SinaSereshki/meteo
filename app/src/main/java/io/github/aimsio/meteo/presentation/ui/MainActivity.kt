@@ -1,4 +1,4 @@
-package io.github.aimsio.meteo.ui
+package io.github.aimsio.meteo.presentation.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
