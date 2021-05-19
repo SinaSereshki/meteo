@@ -6,27 +6,38 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import dagger.android.support.DaggerFragment
 import io.github.aimsio.meteo.R
+import io.github.aimsio.meteo.databinding.SearchFragmentBinding
+import io.github.aimsio.meteo.presentation.ui.MainNavigator
+import me.meikiem.pixabay.presentation.extension.viewModelProvider
+import javax.inject.Inject
 
-class SearchFragment : Fragment() {
+class SearchFragment : DaggerFragment() {
 
-    companion object {
-        fun newInstance() = SearchFragment()
-    }
+    @Inject
+    lateinit var navigator: MainNavigator
+
+    @Inject
+    lateinit var factory: ViewModelProvider.Factory
+
+    private lateinit var currentAdapter: CurrentAdapter
 
     private lateinit var viewModel: SearchViewModel
+
+    private lateinit var binding: SearchFragmentBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = viewModelProvider(factory)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.search_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
-        // TODO: Use the ViewModel
+    ): View {
+        binding = SearchFragmentBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
 }
