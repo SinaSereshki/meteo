@@ -8,28 +8,54 @@
     android:background="@color/light_gray"
     tools:context=".presentation.ui.search.SearchFragment">
 
-    <EditText
-        android:id="@+id/et_search_city"
+    <LinearLayout
+        android:id="@+id/search_linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_margin="5dp"
-        android:background="@color/dark_blue"
-        android:drawableLeft="@android:drawable/ic_menu_search"
-        android:ems="10"
-        android:gravity="left"
-        android:hint="@string/search_hint"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ib_search_city"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/dark_blue"
+            android:src="@android:drawable/ic_menu_search"
+            android:ems="10"
+            android:gravity="left"
+            android:hint="@string/search_hint"
+            />
+        <EditText
+            android:id="@+id/et_search_city"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="6"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/dark_blue"
+            android:ems="10"
+            android:gravity="left"
+            android:hint="@string/search_hint"
+            />
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_today_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/today_in"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_search_city" />
+        app:layout_constraintTop_toBottomOf="@+id/search_linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -37,7 +63,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/tv_today_in">
 
         <TextView
             android:id="@+id/tv_city_name"
