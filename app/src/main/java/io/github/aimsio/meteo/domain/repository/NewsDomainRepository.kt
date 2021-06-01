@@ -4,5 +4,5 @@ import io.github.aimsio.meteo.data.model.news.News
 import io.reactivex.Single
 
 interface NewsDomainRepository {
-    fun getNews(cityName:String): Single<News>
+    fun getNews(cityName:String, pageNumber: Int): Single<News>
 }

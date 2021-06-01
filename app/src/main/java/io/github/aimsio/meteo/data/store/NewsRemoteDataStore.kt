@@ -10,8 +10,8 @@ import javax.inject.Inject
 class NewsRemoteDataStore @Inject constructor(
     private val newsRemote: NewsRemote
 ): NewsDataStore {
-    override fun getNews(cityName: String): Single<NewsEntity> {
-        return newsRemote.getNews(cityName)
+    override fun getNews(cityName: String, pageNumber: Int): Single<NewsEntity> {
+        return newsRemote.getNews(cityName, pageNumber)
     }
 
     override fun saveNews(cityName: String, news: NewsEntity): Completable {

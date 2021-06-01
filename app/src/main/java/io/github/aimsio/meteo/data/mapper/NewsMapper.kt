@@ -8,10 +8,10 @@ import javax.inject.Inject
 
 class NewsMapper @Inject constructor() : EntityMapper<NewsEntity, News>  {
     override fun mapFromEntity(entity: NewsEntity): News {
-        return  News(entity.articles, entity.status, entity.totalResults)
+        return  News(entity.id, entity.articles, entity.status, entity.totalResults)
     }
 
     override fun mapToEntity(domain: News): NewsEntity {
-        return  NewsEntity(domain.articles, domain.status, domain.totalResults)
+        return  NewsEntity(domain.id, domain.articles, domain.status, domain.totalResults)
     }
 }

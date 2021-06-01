@@ -9,4 +9,5 @@
     <string name="current">Current</string>
     <string name="next_3_days">Next 3 days</string>
     <string name="news_highlights">News Highlights</string>
+    <string name="search">Search</string>
 </resources>

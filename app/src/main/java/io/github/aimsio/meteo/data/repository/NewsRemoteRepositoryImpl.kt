@@ -7,7 +7,7 @@ import javax.inject.Inject
 class NewsRemoteRepositoryImpl @Inject constructor(
     private val news: NewsRemote
 ): NewsRepository {
-    override fun getNews(cityName: String): Single<NewsEntity> {
-        return news.getNews(cityName)
+    override fun getNews(cityName: String, pageNumber: Int): Single<NewsEntity> {
+        return news.getNews(cityName, pageNumber)
     }
 }

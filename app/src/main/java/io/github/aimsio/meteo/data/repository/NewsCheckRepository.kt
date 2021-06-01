@@ -16,22 +16,24 @@ class NewsCheckRepository @Inject constructor(
 
     fun observeNews(
         cityName:String,
+        pageNumber: Int,
         isCachedAndNotExpired:Boolean
     ): Single<News> {
         return if(isCachedAndNotExpired)
-            observeLocalNews(cityName)
+            observeLocalNews(cityName,pageNumber
+            )
         else
-            observeRemoteNews(cityName)
+            observeRemoteNews(cityName,pageNumber)
     }
 
 
 
-    private fun observeLocalNews(cityName: String): Single<News> {
-        return newsCacheDataStore.getNews(cityName).map { mapper.mapFromEntity(it) }
+    private fun observeLocalNews(cityName: String, pageNumber: Int): Single<News> {
+        return newsCacheDataStore.getNews(cityName, pageNumber).map { mapper.mapFromEntity(it) }
     }
 
-    private fun observeRemoteNews(cityName: String)
+    private fun observeRemoteNews(cityName: String, pageNumber: Int)
             : Single<News> {
-        return newsDomainRepository.getNews(cityName)
+        return newsDomainRepository.getNews(cityName, pageNumber)
     }
 }

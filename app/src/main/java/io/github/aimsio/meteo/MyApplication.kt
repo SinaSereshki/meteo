@@ -2,6 +2,7 @@ package io.github.aimsio.meteo
 
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
+import io.github.aimsio.meteo.di.DaggerAppComponent
 
 class MyApplication : DaggerApplication() {
 

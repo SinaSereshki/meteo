@@ -5,11 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.ui.MainActivity">
-
     <fragment
         android:id="@+id/main_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="io.github.aimsio.meteo.presentation.ui.search.SearchFragment"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

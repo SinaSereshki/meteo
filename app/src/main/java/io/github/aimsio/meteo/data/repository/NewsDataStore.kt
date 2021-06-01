@@ -6,7 +6,7 @@ import io.reactivex.Single
 
 interface NewsDataStore {
 
-    fun getNews(cityName: String): Single<NewsEntity>
+    fun getNews(cityName: String, pageNumber: Int): Single<NewsEntity>
 
     fun saveNews(cityName: String, news: NewsEntity): Completable
 

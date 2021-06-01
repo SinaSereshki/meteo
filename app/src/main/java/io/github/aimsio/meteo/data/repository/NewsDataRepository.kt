@@ -14,10 +14,10 @@ class NewsDataRepository @Inject constructor(
     private val newsCacheDataStore: NewsCacheDataStore,
     private val cache: NewsCache
 ): NewsDomainRepository {
-    override fun getNews(cityName: String): Single<News> {
+    override fun getNews(cityName: String, pageNumber: Int): Single<News> {
         val response:Single<News>
 
-        response = newsRemoteDataStore.getNews(cityName).flatMap { photoEntities ->
+        response = newsRemoteDataStore.getNews(cityName, pageNumber).flatMap { photoEntities ->
             Single.zip(
                 cache.isNewsCached(cityName),
                 cache.isNewsCacheExpired(cityName),

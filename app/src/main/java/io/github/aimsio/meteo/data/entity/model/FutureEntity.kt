@@ -3,7 +3,8 @@ package io.github.aimsio.meteo.data.entity.model
 import io.github.aimsio.meteo.data.model.weather.*
 
 data class FutureEntity(
-    val city: City,
+    val id: Long,
+    val cityName: String,
     val cnt: Int,
     val cod: String,
     val list: List<Info>,

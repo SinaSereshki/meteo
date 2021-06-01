@@ -5,5 +5,5 @@ import io.reactivex.Single
 
 interface NewsRemote {
 
-    fun getNews(cityName:String):Single<NewsEntity>
+    fun getNews(cityName:String, pageNumber: Int):Single<NewsEntity>
 }

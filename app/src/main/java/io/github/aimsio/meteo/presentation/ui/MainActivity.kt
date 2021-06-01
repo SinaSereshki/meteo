@@ -1,10 +1,10 @@
 package io.github.aimsio.meteo.presentation.ui
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import io.github.aimsio.meteo.R
+import androidx.fragment.app.FragmentActivity
+import io.github.aimsio.meteo.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), MainNavigator {
+class MainActivity : FragmentActivity(), MainNavigator {
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {

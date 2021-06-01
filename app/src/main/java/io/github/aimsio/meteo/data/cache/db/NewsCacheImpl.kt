@@ -38,7 +38,7 @@ class NewsCacheImpl @Inject constructor(
         }
     }
 
-    override fun getNews(cityName: String): Single<NewsEntity> {
+    override fun getNews(cityName: String, pageNumber: Int): Single<NewsEntity> {
         return appDatabase.newsCacheDao().getNews(cityName).firstOrError()
             .map { mapper.mapFromCached(it) }
 
